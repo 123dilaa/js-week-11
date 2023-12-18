@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parkir Kendaraan</title>
+    <script>
+        function hitungBiaya() {
+            var jamMasuk = parseInt(document.getElementById("jamMasuk").value);
+            var jamKeluar = parseInt(document.getElementById("jamKeluar").value);
+
+            var lamaParkir = jamKeluar - jamMasuk;
+            var biayaParkir;
+
+            if (lamaParkir <= 2) {
+                biayaParkir = 3000;
+            } else {
+                biayaParkir = 3000 + (lamaParkir - 2) * 1000;
+            }
+
+            document.getElementById("biaya").value = biayaParkir;
+        }
+    </script>
+</head>
+<body>
+    <h1>Parkir Kendaraan</h1>
+    <label for="jamMasuk">Jam Masuk:</label>
+    <input type="number" id="jamMasuk" name="jamMasuk" required>
+    <br>
+    <label for="jamKeluar">Jam Keluar:</label>
+    <input type="number" id="jamKeluar" name="jamKeluar" required>
+    <br>
+    <button onclick="hitungBiaya()">Hitung Biaya</button>
+    <br>
+    <label for="biaya">Biaya Parkir:</label>
+    <input type="number" id="biaya" name="biaya" readonly><br>
+</body>
+</html>
